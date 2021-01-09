@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+<h4>New User Registration</h4>
+<form autocomplete="off" action="#" th:action="@{/register}" th:object="${user}" method="post">
+
+    First Name <mark><strong>
+    <span th:if="${#fields.hasErrors('firstName')}"
+          th:errors="*{firstName}">First Name Error</span></strong></mark>
+    <input type="text" id="firstName" placeholder="First Name" th:if="*{firstName}" />
+    <br />
+
+    Last Name <mark><strong>
+    <span th:if="${#fields.hasErrors('lastName')}"
+          th:errors="*{lastName}">Last Name Error</span></strong></mark>
+    <input type="text" id="lastName" placeholder="Last Name" th:if="*{lastName}" />
+    <br />
+
+    Email <mark><strong>
+    <span th:if="${#fields.hasErrors('email')}"
+          th:errors="*{email}">Email Error</span></strong></mark>
+    <input type="text" id="email" placeholder="Email" th:if="*{email}" />
+    <br />
+
+    Username <mark><strong>
+    <span th:if="${#fields.hasErrors('username')}"
+          th:errors="*{username}">First Name Error</span></strong></mark>
+    <input type="text" id="Username" placeholder="Username" th:if="*{username}" />
+    <br />
+
+    Password <mark><strong>
+    <span th:if="${#fields.hasErrors('password')}"
+          th:errors="*{password}">First Name Error</span></strong></mark>
+    <input type="text" id="password" placeholder="Password" th:if="*{password}" />
+    <br />
+
+    <button type="submit" class="btn btn-default">Submit</button>
+
+</form>
+
+</body>
+</html>
